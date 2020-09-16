@@ -9,12 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var numLabel: UILabel!
+    var numOfClicks = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      changeClickLabel()
+    }
+    
+    func changeClickLabel(){
+        numLabel.text = String(numOfClicks)
     }
 
-
+    @IBAction func btnClicked(_ sender: UIButton) {
+        numOfClicks+=1
+        changeClickLabel()
+    }
+    
 }
 
